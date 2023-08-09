@@ -7,13 +7,17 @@ const userSchema = new Schema(
   {
   email: { 
     type: String, 
-    required: true },
+    required: true,
+    unique: true, },
+    
   username: { 
     type: String, 
-    required: true },
+    required: true,
+    unique: true, },
   password_digest: { 
     type: String, 
-    required: true },
+    required: true,
+    minLength: 4 },
   },
   {
     timestamps: true
