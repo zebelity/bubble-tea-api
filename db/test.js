@@ -30,16 +30,6 @@ const menuItems = [
   "__v": 0
   },
   {
-  "_id": "64d0e771cfc9d02766ba5687",
-  "brandId": "64d0e771cfc9d02766ba5686",
-  "brandName": "Sharetea",
-  "title": "Tiger Milk Tea",
-  "img_url": "https://b1388612.smushcdn.com/1388612/wp-content/uploads/2022/10/Tiger-no-logo-wrap_-1.png?lossy=1&strip=1&webp=1",
-  "detail": "Sharetea Australia’s famous brown sugar syrup Tiger Tea, and the number 1 selling drink on our bubble tea menu. It’s the ultimate sweet indulgence.",
-  "calories": 2092,
-  "__v": 0
-  },
-  {
   "_id": "64d0e7c8f384de3ceb1e94dc",
   "brandId": "64d0e771cfc9d02766ba5686",
   "brandName": "Sharetea",
@@ -183,6 +173,13 @@ const menuItems = [
     "img_url": "https://eager-volhard-bd9102.netlify.app/img/4.png",
     "detail": "The perfect combination of Japanese Matcha and fresh milk, the taste is rich with multiple layers of flavors.",
     "calories": 1406,
+  },
+  {
+    "brandName": "Gong Cha",
+    "title": "Pearl Milk Tea",
+    "img_url": "https://eager-volhard-bd9102.netlify.app/img/5.png",
+    "detail": "Worldwide favorite classic drink is the perfect match of rich and creamy milk tea, and chewy pearls.",
+    "calories": 2205,
   },
   ]
 
