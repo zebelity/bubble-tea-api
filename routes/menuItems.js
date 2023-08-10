@@ -5,8 +5,6 @@ const ensureLoggedIn = require('../middlewares/ensure_logged_In');
 const MenuItem = require("../models/menuItem.js");
 const Review = require("../models/review.js");
 const Brand = require("../models/brand.js");
-const User = require("../models/user.js")
-
 
 router.get('/', async (req, res, next) => {
   try {
@@ -42,7 +40,6 @@ router.get('/:id', ensureLoggedIn, async (req, res, next) => {
     const brands = (await Brand.find()).map(v => v.toJSON())
     const reviews = (await Review.find().populate("userId")).map(v => v.toJSON())
   
-
     const brand = brands.find(b => 
       b._id.toString() === menuItem.brandId.toString())
 
@@ -62,7 +59,6 @@ router.post('/:id/reviews', ensureLoggedIn, async (req, res, next) => {
     const { content, score } = req.body
     const menuItemId = req.params.id;
     const review = await Review.create({ userId, menuItemId, content, score })
-    console.log(review)
     
     res.json(review)
   } catch(e) {
@@ -70,24 +66,30 @@ router.post('/:id/reviews', ensureLoggedIn, async (req, res, next) => {
   }
 })
 
-router.delete('/:id/reviews/:reviewId', ensureLoggedIn, (req, res, next) => {
+router.delete('/:id/reviews/:reviewId', ensureLoggedIn,async (req, res, next) => {
+  try {
+    const userId = req.user.id;
+    const menuItemId = req.params.id;
+    const reviewId = req.params.reviewId;
 
-  const userId = req.body.userId; 
-  const menuItemId = req.params.id;
-  const reviewId = req.params.reviewId;
+    const review = await Review.findOne({ _id: reviewId, userId, menuItemId })
+    if (!review) {
+      return res.status(403).json({ message: 'You are not authorized to delete this review.' })
+    }
 
-  Review.findByIdAndDelete({ _id: reviewId, userId, menuItemId })
-    .then(menuItem => res.json(menuItem))
-    .catch(next);
+    await review.deleteOne();
+    res.json({ message: 'Review deleted successfully.' })
+  } catch(e) {
+    next(e)
+  }
 })
 
 router.put('/:id/reviews/:reviewId', ensureLoggedIn, (req, res, next) => {
-  console.log(req.body)
-  const userId = req.body.userId;
+
+  const userId = req.user.id;
   const menuItemId = req.params.id;
   const reviewId = req.params.reviewId;
   const updatedReview = req.body.content;
-
 
   Review.findByIdAndUpdate(
     { _id: reviewId, userId, menuItemId },

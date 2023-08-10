@@ -6,16 +6,15 @@ const User = require('../models/user');
 async function createUser() {
   try {
     const newUser = await User.create({
-      email: 'chatkamon@ga.co',
-      username: 'Zebelity',
-      password_digest: 'mooham', // 
+      email: 'sei65@ga.co',
+      username: 'Sei65',
+      password_digest: 'pudding', // 
     });
     
     console.log('New user created:', newUser);
   } catch (error) {
     console.error('Error creating user:', error);
   } finally {
-    // Close the database connection
     console.log("Done");
   }
 }
@@ -33,13 +32,15 @@ async function getAllUsers() {
 
 getAllUsers();
 
-// async function deleteAllUsers() {
-//   try {
-//     const deleteResult = await User.deleteMany({});
-//     console.log(`Deleted ${deleteResult.deletedCount} users`);
-//   } catch (error) {
-//     console.error('Error deleting users:', error);
-//   }
-// }
-
-// deleteAllUsers();
+const myUser = [
+  {
+    'email': 'chatkamon@ga.co',
+    'username': 'Zebelity',
+    'password_digest': 'mooham'
+  },
+  {
+    'email': 'sei65@ga.co',
+    'username': 'Sei65',
+    'password_digest': 'pudding'
+  },
+]

@@ -11,5 +11,4 @@ const brandSchema = new Schema(
   }
 );
 
-
 module.exports = mongoose.model('Brand', brandSchema);

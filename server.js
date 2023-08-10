@@ -9,9 +9,7 @@ const usersRouter = require('./routes/users');
 const errorHandler = require("./middlewares/error_handeler");
 const checkToken = require('./middlewares/check_token');
 
-
 require('./db')
-
 
 app.use(express.json());
 app.use(checkToken);
@@ -20,9 +18,6 @@ app.use('/api/login', usersRouter);
 
 //handle error all page
 app.use(errorHandler);
-
-
-
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);

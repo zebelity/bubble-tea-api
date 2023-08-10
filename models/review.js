@@ -17,7 +17,7 @@ const reviewSchema = new Schema(
   content: { 
     type: String,
     required: true,
-    minLength: 3
+    minLength: 1
   },
   score: {
     type: Number,
