@@ -10,23 +10,23 @@ const menuItems = [
   "__v": 0
   },
   {
-  "_id": "64d0e53b3f57975589c6008d",
-  "brandId": "64d0e53b3f57975589c6008c",
-  "brandName": "Coco Milktea",
-  "title": "SIGNATURE BUBBLE TEA",
-  "img_url": "https://images.squarespace-cdn.com/content/v1/5edfb8e7559cd9129deae815/1607613477111-LI9B5JPKPSZDAH7TJE0C/Signature+Bubble+Tea?format=2500w",
-  "detail": "Our signature CoCo milk tea with sweet chewy tapioca.",
-  "calories": 2736,
+  "_id": "64d0e89ffe85cf0246c16f48",
+  "brandId": "64d0e89ffe85cf0246c16f47",
+  "brandName": "Gong Cha",
+  "title": "Earl Grey Milk Tea with 3Js",
+  "img_url": "https://eager-volhard-bd9102.netlify.app/img/13.png",
+  "detail": "Earl Grey Black Tea is topped with pudding, grass jelly and chewy pearls. Enjoy a cup that full of taste and flavor",
+  "calories": 1814,
   "__v": 0
   },
   {
-  "_id": "64d0e5be1930a1c46219dcec",
-  "brandId": "64d0e53b3f57975589c6008c",
-  "brandName": "Coco Milktea",
-  "title": "QQ MILK TEA",
-  "img_url": "https://images.squarespace-cdn.com/content/v1/5edfb8e7559cd9129deae815/1629474142842-B268HL3JVUYQ4P0J9L7T/QQ+milk+tea.png?format=2500w",
-  "detail": "Our signature CoCo milk tea with QQ: Taro bubble & Sweet potato bubble.",
-  "calories": 2707,
+  "_id": "64d0e952adff716c772c346e",
+  "brandId": "64d0e89ffe85cf0246c16f47",
+  "brandName": "Gong Cha",
+  "title": "Matcha Red Bean",
+  "img_url": "https://gong-cha.ca/wp-content/uploads/2020/06/Matcha-Milk-Tea-with-Red-Bean.png.webp",
+  "detail": "The perfect combination of Japanese Matcha and red bean, the taste is rich.",
+  "calories": 1678,
   "__v": 0
   },
   {
@@ -47,26 +47,6 @@ const menuItems = [
   "img_url": "https://b1388612.smushcdn.com/1388612/wp-content/uploads/2023/08/Dalgona.png?lossy=1&strip=1&webp=1",
   "detail": "The 2020 viral trend is here to stay! Choose from the much loved Dalgona drinks in 3 varieties.",
   "calories": 1036,
-  "__v": 0
-  },
-  {
-  "_id": "64d0e89ffe85cf0246c16f48",
-  "brandId": "64d0e89ffe85cf0246c16f47",
-  "brandName": "Gong Cha",
-  "title": "Earl Grey Milk Tea with 3Js",
-  "img_url": "https://gongcha.co.nz/images/website_thumbnail/1/a7866ce46f1f2f1cf365e69887d3de63.jpg",
-  "detail": "Earl Gray, Pearls, Herbal Jelly, Egg Pudding",
-  "calories": 1814,
-  "__v": 0
-  },
-  {
-  "_id": "64d0e952adff716c772c346e",
-  "brandId": "64d0e89ffe85cf0246c16f47",
-  "brandName": "Gong Cha",
-  "title": "Matcha Red Bean",
-  "img_url": "https://gong-cha.ca/wp-content/uploads/2020/06/Matcha-Milk-Tea-with-Red-Bean.png.webp",
-  "detail": "Matcha, Red bean",
-  "calories": 1678,
   "__v": 0
   },
   {
@@ -148,6 +128,61 @@ const menuItems = [
   "detail": "passion fruit syrup, pineapple syrup, orange juice, green tea, rainbow jelly",
   "calories": 1254,
   "__v": 0
+  },
+  {
+  "_id": "64d0e53b3f57975589c6008d",
+  "brandId": "64d0e53b3f57975589c6008c",
+  "brandName": "Coco Milktea",
+  "title": "SIGNATURE BUBBLE TEA",
+  "img_url": "https://images.squarespace-cdn.com/content/v1/5edfb8e7559cd9129deae815/1607613477111-LI9B5JPKPSZDAH7TJE0C/Signature+Bubble+Tea?format=2500w",
+  "detail": "Our signature CoCo milk tea with sweet chewy tapioca.",
+  "calories": 2736,
+  "__v": 0
+  },
+  {
+  "_id": "64d0e5be1930a1c46219dcec",
+  "brandId": "64d0e53b3f57975589c6008c",
+  "brandName": "Coco Milktea",
+  "title": "QQ MILK TEA",
+  "img_url": "https://images.squarespace-cdn.com/content/v1/5edfb8e7559cd9129deae815/1629474142842-B268HL3JVUYQ4P0J9L7T/QQ+milk+tea.png?format=2500w",
+  "detail": "Our signature CoCo milk tea with QQ: Taro bubble & Sweet potato bubble.",
+  "calories": 2707,
+  "__v": 0
+  },
+  {
+    "brandName": "Gong Cha",
+    "title": "Mango Matcha Latte",
+    "img_url": "https://eager-volhard-bd9102.netlify.app/img/7.png",
+    "detail": "When sweet mango meets slightly bitter matcha. Under the fascinating color tones of green and yellow is the tasty enjoyment.",
+    "calories": 1614,
+  },
+  {
+    "brandName": "Gong Cha",
+    "title": "Milk Foam Green Tea",
+    "img_url": "https://eager-volhard-bd9102.netlify.app/img/1.png",
+    "detail": "High quality tea base is topped with rich and salty sweet milk foam, which is made of fresh milk and secert recipe.",
+    "calories": 1204,
+  },
+  {
+    "brandName": "Gong Cha",
+    "title": "Brown Sugar Latte with Pearl",
+    "img_url": "https://eager-volhard-bd9102.netlify.app/img/2.png",
+    "detail": "Rich sweet brown sugar and chewy pearls in black tea latte. A fascinating brown sugar wave across the globe!",
+    "calories": 934,
+  },
+  {
+    "brandName": "Gong Cha",
+    "title": "QQ Passionfruit Green Tea",
+    "img_url": "https://eager-volhard-bd9102.netlify.app/img/12.png",
+    "detail": "Fresh passion fruit and refreshing green tea, with chewy pearls and nata de coco.Sweet and sour, rich layers in taste and texture.",
+    "calories": 1768,
+  },
+  {
+    "brandName": "Gong Cha",
+    "title": "Matcha Latte",
+    "img_url": "https://eager-volhard-bd9102.netlify.app/img/4.png",
+    "detail": "The perfect combination of Japanese Matcha and fresh milk, the taste is rich with multiple layers of flavors.",
+    "calories": 1406,
   },
   ]
 

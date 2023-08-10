@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const ensureLoggedIn = require('../middlewares/ensure_logged_In');
 
-const MenuItem = require('../models/menuItem.js');
-const Review = require('../models/review.js');
+const MenuItem = require("../models/menuItem.js");
+const Review = require("../models/review.js");
 const Brand = require("../models/brand.js");
+const User = require("../models/user.js")
 
 
 router.get('/', async (req, res, next) => {
@@ -34,20 +36,19 @@ router.get('/', async (req, res, next) => {
   }
 }) 
 
-router.get('/:id', async (req, res, next) => {
+router.get('/:id', ensureLoggedIn, async (req, res, next) => {
   try {
     const menuItem = (await MenuItem.findById(req.params.id)).toJSON()
     const brands = (await Brand.find()).map(v => v.toJSON())
-    const reviews = (await Review.find()).map(v => v.toJSON())
-
+    const reviews = (await Review.find().populate("userId")).map(v => v.toJSON())
   
+
     const brand = brands.find(b => 
       b._id.toString() === menuItem.brandId.toString())
 
     const review = reviews.filter(r => 
       r.menuItemId.toString() === menuItem._id.toString())
-
- 
+    
     res.json({...menuItem, brand, reviews: review})
 
   } catch(e) {
@@ -55,16 +56,21 @@ router.get('/:id', async (req, res, next) => {
   }
 }) 
 
-router.post('/:id/reviews', (req, res, next) => {
-  const { userId, content, score } = req.body
-  const menuItemId = req.params.id;
-
-  Review.create({ userId, menuItemId, content, score })
-    .then(menuItem => res.json(menuItem))
-    .catch(next);
+router.post('/:id/reviews', ensureLoggedIn, async (req, res, next) => {
+  try {
+    const userId = req.user.id
+    const { content, score } = req.body
+    const menuItemId = req.params.id;
+    const review = await Review.create({ userId, menuItemId, content, score })
+    console.log(review)
+    
+    res.json(review)
+  } catch(e) {
+    next(e)
+  }
 })
 
-router.delete('/:id/reviews/:reviewId', (req, res, next) => {
+router.delete('/:id/reviews/:reviewId', ensureLoggedIn, (req, res, next) => {
 
   const userId = req.body.userId; 
   const menuItemId = req.params.id;
@@ -75,14 +81,12 @@ router.delete('/:id/reviews/:reviewId', (req, res, next) => {
     .catch(next);
 })
 
-router.put('/:id/reviews/:reviewId', (req, res, next) => {
+router.put('/:id/reviews/:reviewId', ensureLoggedIn, (req, res, next) => {
   console.log(req.body)
   const userId = req.body.userId;
   const menuItemId = req.params.id;
   const reviewId = req.params.reviewId;
   const updatedReview = req.body.content;
-  console.log({updatedReview})
-
 
 
   Review.findByIdAndUpdate(

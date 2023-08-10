@@ -8,7 +8,7 @@ const menuItemsRouter = require('./routes/menuItems');
 const usersRouter = require('./routes/users');
 const errorHandler = require("./middlewares/error_handeler");
 const checkToken = require('./middlewares/check_token');
-const ensureLoggedIn = require('./middlewares/ensure_logged_In');
+
 
 require('./db')
 

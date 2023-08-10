@@ -26,7 +26,7 @@ router.post('/', async (req, res, next) => {
       }
     // create a token
       const token = createJsonWebToken({id: user._id, email: user.email})
-      res.json(token)
+      res.json({token, user})
     } catch(err) {
       next(err)
     }
