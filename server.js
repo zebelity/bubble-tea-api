@@ -13,8 +13,9 @@ require('./db')
 
 app.use(express.json());
 app.use(checkToken);
-app.use('/api/menuItems', menuItemsRouter);
 app.use('/api/login', usersRouter);
+app.use('/api/menuItems', menuItemsRouter);
+
 
 //handle error all page
 app.use(errorHandler);

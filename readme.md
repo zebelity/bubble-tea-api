@@ -8,7 +8,9 @@ Welcome to the Bubble Tea API, a backend service for managing bubble tea menu it
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [API Endpoints](#api-endpoints)
+- [Entity Relationship Diagram](#entity-relationship-diagram)
 - [Authentication and Authorization](#authentication-and-authorization)
+
 
 ## Introduction
 
@@ -37,7 +39,11 @@ The API provides the following endpoints:
 - `POST /api/menuItems/:id/reviews`: Post a new review for a specific menu item.
 - `PUT /api/menuItems/:id/reviews/:reviewId`: Update an existing review for a specific menu item.
 - `DELETE /api/menuItems/:id/reviews/:reviewId`: Delete a review for a specific menu item.
+- `POST /api/login`: Login
 
+## Entity Relationship Diagram
+
+<img width="1328" alt="image" src="/img/ERD.png">
 
 ## Authentication and Authorization
 
